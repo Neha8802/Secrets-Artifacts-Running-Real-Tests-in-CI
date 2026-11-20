@@ -1,0 +1,15 @@
+name: upload artifacts
+
+on: workflow_dispatch
+
+jobs:
+  upload_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generates a file a test report or a log file
+        run: touch my_file.txt
+
+      - name: upload this
+        run: actions/upload-artifact
+
+    
