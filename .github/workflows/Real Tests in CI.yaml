@@ -6,4 +6,11 @@ jobs:
   artifact_real_test:
     runs-on: ubuntu-latest
     steps:
-      - name: 
+      - name: code checkout
+        uses: actions/checkout@v4
+
+      - name: python setup
+        uses: actions/setup-python@v5
+
+      - name: run the script
+        run: python system_check.py
