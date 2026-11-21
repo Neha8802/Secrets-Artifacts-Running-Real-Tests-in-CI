@@ -10,7 +10,7 @@ jobs:
         run: touch logs-file.txt
 
       - name: download the artifact
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: logs-artifact
           path: logs-file.txt
