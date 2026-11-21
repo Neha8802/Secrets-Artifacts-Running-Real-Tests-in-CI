@@ -10,6 +10,9 @@ jobs:
         run: touch my_file.txt
 
       - name: upload this
-        run: actions/upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-bundle
+          path: my_file.txt
 
     
