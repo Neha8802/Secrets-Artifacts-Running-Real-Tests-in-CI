@@ -1,0 +1,28 @@
+name: download artifacts between jobs
+
+on: workflow_dispatch
+
+jobs:
+  artifcate_from_one_job_to_another_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: crate file for logs
+        run: touch logs-file.txt
+
+      - name: download the artifact
+        uses: action/upload-artifact@v4
+        with:
+          name: logs-artifact
+          path: logs-file.txt
+
+  using_artifact_from_job1:
+    runs-on: ubuntu-latest
+    needs: artifcate_from_one_job_to_another_job
+    steps:
+      - name: download the artifact from Job 1 and use it (print its contents)
+        uses: actions/download-artifact@v4
+        with:
+          name: logs-artifact
+
+      - name: print its context
+        run: cat logs-file.txt
