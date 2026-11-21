@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: installing dependencies
-        run: actions/setup-python@v5
+        uses: actions/setup-python@v5
 
       - name: running script
         run: python system_check.py
