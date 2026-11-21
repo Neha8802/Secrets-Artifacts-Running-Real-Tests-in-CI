@@ -4,10 +4,7 @@ import platform
 print("--- CI System Check ---")
 print(f"Run Timestamp: {datetime.datetime.now(datetime.timezone.utc)}")
 print(f"Operating System: {platform.system()} {platform.release()}")
-print(f"Python Version: {platform.python_version()}")
+prin(f"Python Version: {platform.python_version()}")
 print("Status: All checks passed!")
 
-# Force a failure to prove GitHub Actions stops the pipeline:
-echo "ERROR: Simulated failure!"
-exit 1
 
