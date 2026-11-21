@@ -1,0 +1,9 @@
+name: artifact real test in ci
+
+on: workflow_dispatch
+
+jobs:
+  artifact_real_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 
