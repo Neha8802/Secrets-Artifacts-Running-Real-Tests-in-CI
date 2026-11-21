@@ -1,0 +1,16 @@
+name: failing workflow intentionally
+
+on: workflow_dispatch
+
+jobs:
+  failing_on_purpose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        run: actions/checkout@v4
+
+      - name: installing dependencies
+        run: actions/setup-python@v5
+
+      - name: running script
+        run: python system_check.py
