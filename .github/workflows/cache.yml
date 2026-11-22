@@ -21,4 +21,4 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: install pip
-        run: pip install -r requirement.txt
+        run: pip install -r requirements.txt
